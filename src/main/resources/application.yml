@@ -2,10 +2,10 @@
 #spring.security.user.password= Pwd1
 
 server:
-  port: 8081
+  port: 8080
 spring:
   application:
-    name: Loung
+    name: Anywr-auth
   thymeleaf:
     cache: false
   messages:

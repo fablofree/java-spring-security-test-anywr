@@ -77,10 +77,9 @@ git commit -m "ASSOC-xxx | <commentaire>"
 ```
 ###### Ressources utilisées
 
-```
+
 https://start.spring.io
 https://spring.io/
 https://docs.liquibase.com/tools-integrations/springboot/springboot.html
 https://www.bezkoder.com/spring-boot-jwt-authentication/
 https://www.baeldung.com/jackson-ignore-null-fields
-```
