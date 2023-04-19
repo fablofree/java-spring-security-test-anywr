@@ -1,0 +1,3 @@
+id,username,email,password,roles,created_by
+1,admin,admin@anywr.io,$2a$10$Rseq99bQWGpW7MF.Vx5HT.BzzzdysZJM5mtAwFNkdCfHbFONZueXe,ADMIN,system
+2,user,user@anywr.io,$2a$10$Rseq99bQWGpW7MF.Vx5HT.BzzzdysZJM5mtAwFNkdCfHbFONZueXe,USER,system
