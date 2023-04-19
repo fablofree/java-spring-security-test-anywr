@@ -11,6 +11,7 @@ public class UserMapper {
     public User toEntity(UserInfoDto user) {
         return User.builder()
                 .email(user.getEmail())
+                .password(user.getPassword())
                 .roles(user.getRoles())
                 .userName(user.getUserName())
                 .build();

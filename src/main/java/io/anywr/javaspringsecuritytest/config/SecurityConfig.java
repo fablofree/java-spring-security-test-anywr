@@ -1,5 +1,6 @@
 package io.anywr.javaspringsecuritytest.config;
 
+import io.anywr.javaspringsecuritytest.service.LogOutService;
 import io.anywr.javaspringsecuritytest.service.UserInfoUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -25,8 +26,8 @@ public class SecurityConfig {
     @Autowired
     private JwtAuthFilter authFilter;
 
-//    @Autowired
-//    private LogOutService logOutService;
+    @Autowired
+    private LogOutService logOutService;
 
 
     @Bean
@@ -43,10 +44,10 @@ public class SecurityConfig {
                 .and()
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
-                //.logout()
-                //.logoutUrl("/api/v1/users/logout")
-                //.addLogoutHandler(logOutService)
-                //.logoutSuccessHandler((request, response, authentication) ->SecurityContextHolder.clearContext())
+                .logout()
+                .logoutUrl("/api/v1/users/logout")
+                .addLogoutHandler(logOutService)
+                .logoutSuccessHandler((request, response, authentication) ->SecurityContextHolder.clearContext())
         ;
         return http.build();
     }

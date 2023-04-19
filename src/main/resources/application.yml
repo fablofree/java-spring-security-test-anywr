@@ -1,6 +1,8 @@
 #spring.security.user.name= Basant
 #spring.security.user.password= Pwd1
 
+server:
+  port: 8081
 spring:
   application:
     name: Loung
