@@ -6,8 +6,10 @@ import io.anywr.javaspringsecuritytest.entity.Token;
 import io.anywr.javaspringsecuritytest.entity.TokenType;
 import io.anywr.javaspringsecuritytest.entity.User;
 import io.anywr.javaspringsecuritytest.exception.EntityNotFoundException;
+import io.anywr.javaspringsecuritytest.helper.UserHelper;
 import io.anywr.javaspringsecuritytest.repository.TokenRepository;
 import io.anywr.javaspringsecuritytest.service.JwtService;
+import io.anywr.javaspringsecuritytest.service.UserInfoUserDetails;
 import io.anywr.javaspringsecuritytest.service.UserService;
 import io.anywr.javaspringsecuritytest.utils.UrlUtils;
 import jakarta.validation.Valid;
@@ -89,7 +91,10 @@ public class UserController {
         }
 
         throw new EntityNotFoundException("L'utiliser "+ authRequest.getUsername() +" n'existe pas !");
+    }
 
-
+    @GetMapping("user-info")
+    public ResponseEntity<UserInfoDto> getUserDetails(){
+        return ResponseEntity.ok(userService.getUserDetails());
     }
 }

@@ -12,4 +12,6 @@ public interface UserService {
 public void enregistrerUtilisateur(UserInfoDto userInfoDto);
 
     Optional<User> isUserExits(String username);
+
+    UserInfoDto getUserDetails();
 }
