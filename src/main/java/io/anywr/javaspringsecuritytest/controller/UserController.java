@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @PostMapping("login")
-    public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
+    public String authenticateAndGetToken(@RequestBody @Valid AuthRequest authRequest) {
        return userService.authenticateAndGetToken(authRequest);
     }
 
