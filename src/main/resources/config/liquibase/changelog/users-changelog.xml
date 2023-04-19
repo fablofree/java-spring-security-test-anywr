@@ -26,7 +26,7 @@
             <column name="roles" type="varchar(150)">
                 <constraints nullable="false"/>
             </column>
-            <column name="created_by" type="varchar(50)">
+            <column name="created_by" type="varchar(50)" defaultValue="Anywr">
                 <constraints nullable="false"/>
             </column>
             <column name="created_date" type="timestamp" defaultValueDate="${now}">

@@ -33,7 +33,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/users/authenticate", "/api/v1/products/welcome").permitAll()
+                .requestMatchers("/api/v1/users/create", "/api/v1/users/login").permitAll()
                 .and()
                 .authorizeHttpRequests().requestMatchers("/api/v1/**")
                 .authenticated().and()
@@ -43,11 +43,11 @@ public class SecurityConfig {
                 .and()
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
-                .logout()
-                .logoutUrl("/api/v1/users/logout")
+                //.logout()
+                //.logoutUrl("/api/v1/users/logout")
                 //.addLogoutHandler(logOutService)
-                .logoutSuccessHandler((request, response, authentication) ->
-                        SecurityContextHolder.clearContext());
+                //.logoutSuccessHandler((request, response, authentication) ->SecurityContextHolder.clearContext())
+        ;
         return http.build();
     }
 
