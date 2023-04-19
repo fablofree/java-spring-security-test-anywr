@@ -20,7 +20,7 @@ public class User extends AbstractAuditingEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "username")
-    private String username;
+    private String userName;
     private String email;
     private String password;
     private String roles;
